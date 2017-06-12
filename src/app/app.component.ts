@@ -19,5 +19,4 @@ export class AppComponent {
       this.angulartics2.developerMode(true);
     }
   }
-
 }
