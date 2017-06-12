@@ -1,9 +1,6 @@
-// Library Modules
-import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Angular Core
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -18,15 +15,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     CoreModule,
-    AppRoutingModule,
+    AppRoutingModule // Keep this after Core and Feature Modules for correct routes ordering
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-   constructor() {
-   }
-}
+export class AppModule {}
