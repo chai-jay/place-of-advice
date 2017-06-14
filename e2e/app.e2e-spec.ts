@@ -7,8 +7,19 @@ describe('place-of-advice App', () => {
     page = new PlaceOfAdvicePage();
   });
 
-  it('should display welcome message', () => {
+  it('should have the root element', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to pla!!');
+    expect(page.getRootElement().isPresent()).toBe(true);
+  });
+
+  it('should display header component with header text', () => {
+    page.navigateTo();
+    expect(page.getHeaderText()).toEqual('Place of Advice');
+  });
+
+  it('should display header component with nav menu and nav menu button', () => {
+    page.navigateTo();
+    expect(page.getHeaderNavMenuButton().isPresent()).toBe(true);
+    expect(page.getHeaderNavMenu().isPresent()).toBe(true);
   });
 });

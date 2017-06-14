@@ -5,7 +5,19 @@ export class PlaceOfAdvicePage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('pla-root h1')).getText();
+  getRootElement() {
+    return element(by.css('pla-root'));
+  }
+
+  getHeaderText() {
+    return element(by.css('pla-header .main-title')).getText();
+  }
+
+  getHeaderNavMenuButton() {
+    return element(by.css('button[md-icon-button]'));
+  }
+
+  getHeaderNavMenu() {
+    return element(by.css('md-menu'));
   }
 }
