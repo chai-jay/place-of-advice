@@ -9,6 +9,16 @@ export class PlaceOfAdvicePage {
     return element(by.css('pla-root'));
   }
 
+  /**
+   * 
+   * Global Header Component
+   * 
+   */
+
+  getHeaderElement() {
+    return element(by.css('pla-header'));
+  }
+
   getHeaderText() {
     return element(by.css('pla-header .main-title')).getText();
   }
@@ -19,5 +29,13 @@ export class PlaceOfAdvicePage {
 
   getHeaderNavMenu() {
     return element(by.css('md-menu'));
+  }
+
+  getHeaderNavMenuHomeLink() {
+    return element(by.css('a[routerlink="/"]'));
+  }
+
+  getHeaderNavMenuTabcalcLink() {
+    return element(by.css('a[routerlink="/tab-calc"]'));
   }
 }
