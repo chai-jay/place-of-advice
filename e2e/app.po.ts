@@ -11,7 +11,7 @@ export class PlaceOfAdvicePage {
 
   /**
    * 
-   * Global Header Component
+   * Global HeaderComponent
    * 
    */
 
@@ -37,5 +37,15 @@ export class PlaceOfAdvicePage {
 
   getHeaderNavMenuTabcalcLink() {
     return element(by.css('a[routerlink="/tab-calc"]'));
+  }
+
+  /**
+   * 
+   * HomeComponent
+   * 
+   */
+
+  getHomeElement() {
+    return element(by.css('pla-home'));
   }
 }

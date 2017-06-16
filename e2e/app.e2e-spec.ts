@@ -12,6 +12,12 @@ describe('place-of-advice App', () => {
     expect(page.getRootElement().isPresent()).toBe(true);
   });
 
+  /**
+   * 
+   * Global HeaderComponent
+   * 
+   */
+
   describe('Header Component', () => {
     it ('should exist', () => {
       page.navigateTo();
@@ -32,4 +38,17 @@ describe('place-of-advice App', () => {
       expect(page.getHeaderNavMenuTabcalcLink().isPresent()).toBe(true);
     });
   })
+
+  /**
+   * 
+   * HomeComponent
+   * 
+   */
+
+  describe('Home Component', () => {
+    it('should exist', () => {
+      page.navigateTo();
+      expect(page.getHeaderElement().isPresent()).toBe(true);
+    });
+  });
 });

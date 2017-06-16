@@ -1,5 +1,5 @@
 // Angular Core
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 // Third Party Libraries
@@ -13,6 +13,9 @@ import { MaterialModule } from '@angular/material';
 // Components
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+
+// Misc
+import { throwIfAlreadyLoaded } from './module-import-guard';
 
 @NgModule({
   imports: [
@@ -35,4 +38,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
+  }
+}
