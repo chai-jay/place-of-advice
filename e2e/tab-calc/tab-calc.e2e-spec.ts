@@ -7,4 +7,11 @@ describe('place-of-advice App', () => {
     page = new TabCalcPage();
   });
 
+  describe('Tab-Calc Component', () => {
+    it ('should exist', () => {
+      page.navigateTo()
+      expect(page.getTabCalcElement().isPresent()).toBe(true);
+    });
+  });
+
 });
