@@ -8,4 +8,8 @@ export class TabCalcPage {
   getTabCalcElement() {
     return element(by.css('pla-tab-calc'));
   }
+
+  getTabCalcMdcardElement() {
+    return element(by.css('pla-tab-calc md-card'));
+  }
 }

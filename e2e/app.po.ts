@@ -48,4 +48,8 @@ export class PlaceOfAdvicePage {
   getHomeElement() {
     return element(by.css('pla-home'));
   }
+
+  getHomeMdcardElement() {
+    return element(by.css('pla-home md-card'));
+  }
 }
