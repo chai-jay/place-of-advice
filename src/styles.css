@@ -11,3 +11,20 @@ html, body {
     margin: 0;
     height: 100%;
 }
+
+/**
+ *
+ * Common CSS Rules in features
+ *
+ */
+
+.feature-container {
+
+}
+
+.feature-header {
+  font-size: 1.4em;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}

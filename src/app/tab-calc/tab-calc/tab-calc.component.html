@@ -1,4 +1,19 @@
 <md-card fxLayoutAlign="center" fxFlex.xs="100%">
-  <h2>NJ Tab Calculator</h2>
-
+  <section class="feature-container">
+    <h2 class="feature-header">NJ Tab Calculator</h2>
+    <form class="tab-calc-form" [formGroup]="tabCalcForm">
+      <div>
+        <md-input-container>
+          <input class="md-input-suffixed" mdInput type="number" formControlName="tipPercent" name="tipPercent" placeholder="Tip %" step="1">
+          <span md-suffix>%</span>
+        </md-input-container>
+      </div>
+      <div>
+        <md-input-container>
+          <span md-prefix>$</span>
+          <input class="md-input-prefixed" mdInput type="number" formControlName="price" name="price" placeholder="Price" step="0.01">
+        </md-input-container>
+      </div>
+    </form>
+  </section>
 </md-card>

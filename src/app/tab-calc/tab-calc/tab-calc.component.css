@@ -1,0 +1,12 @@
+:host {
+  font-size: 1.4em;
+}
+
+.tab-calc-form {
+  margin: 1em 0;
+}
+
+.md-input-prefixed,
+.md-input-suffixed {
+  width: 85%;
+}
