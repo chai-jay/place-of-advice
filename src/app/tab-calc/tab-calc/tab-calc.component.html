@@ -1,18 +1,37 @@
-<md-card fxLayoutAlign="center" fxFlex.xs="100%">
+<md-card fxLayoutAlign="center" fxFlex.xs="100">
   <section class="feature-container">
     <h2 class="feature-header">NJ Tab Calculator</h2>
     <form class="tab-calc-form" [formGroup]="tabCalcForm">
-      <div>
-        <md-input-container>
-          <input class="md-input-suffixed" mdInput type="number" formControlName="tipPercent" name="tipPercent" placeholder="Tip %" step="1">
-          <span md-suffix>%</span>
+      <div class="amount-input-container" fxLayout fxLayoutAlign="space-between center">
+        <label for="tipPercent" class="amount-input-label" fxFlex="80">Tip Percent</label>
+        <md-input-container floatPlaceholder="never" fxFlex="20">
+          <input id="tipPercent" type="number" mdInput formControlName="tipPercent" name="tipPercent" placeholder="Tip %" step="1">
+          <span md-suffix [hidden]="tabCalcForm.get('tipPercent').invalid">%</span>
         </md-input-container>
       </div>
-      <div>
-        <md-input-container>
-          <span md-prefix>$</span>
-          <input class="md-input-prefixed" mdInput type="number" formControlName="price" name="price" placeholder="Price" step="0.01">
+      <div class="amount-input-container" fxLayout fxLayoutAlign="space-between center">
+        <label for="price" class="amount-input-label" fxFlex="70">Price (pretax)</label>
+        <md-input-container floatPlaceholder="never" fxFlex="30">
+          <span md-prefix [hidden]="tabCalcForm.get('price').invalid">$</span>
+          <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price" step="0.01">
         </md-input-container>
+      </div>
+
+      <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
+        <div class="amount-label">+ Tax</div>
+        <div class="amount-text">{{ taxAmount | currency:'USD':true }}</div>
+      </div>
+      <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
+        <div class="amount-label">+ Tip</div>
+        <div class="amount-text">{{ tipAmount | currency:'USD':true }}</div>
+      </div>
+      <div class="amount-container total" fxLayout fxLayoutAlign="space-between center">
+        <div class="amount-label">Total</div>
+        <div class="amount-text">{{ totalAmount | currency:'USD':true }}</div>
+      </div>
+
+      <div class="reset-button-container">
+        <button class="reset-button" md-raised-button (click)="resetForm()">Reset</button>
       </div>
     </form>
   </section>

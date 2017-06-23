@@ -6,7 +6,21 @@
   margin: 1em 0;
 }
 
-.md-input-prefixed,
-.md-input-suffixed {
-  width: 85%;
+.amount-container {
+  margin: 1em 0 1em;
+}
+
+.amount-container.total {
+  font-weight: 700;
+  border-top: 3px solid #000;
+  margin: 0.5em 0 1em;
+  padding-top: 1em;
+}
+
+.reset-button-container {
+  text-align: center;
+}
+
+.reset-button {
+  font-size: 0.75em;
 }

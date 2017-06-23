@@ -28,3 +28,13 @@ html, body {
   text-align: center;
   margin: 0;
 }
+
+/**
+ *
+ * Stubborn CSS that can't be applied via View-Encapsulated component styles
+ *
+ */
+
+.tab-calc-form .mat-input-infix {
+  display: flex;
+}
