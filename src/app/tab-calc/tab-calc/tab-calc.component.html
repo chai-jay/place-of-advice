@@ -13,12 +13,12 @@
         <label for="price" class="amount-input-label" fxFlex="70">Price (pretax)</label>
         <md-input-container floatPlaceholder="never" fxFlex="30">
           <span md-prefix [hidden]="tabCalcForm.get('price').invalid">$</span>
-          <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price" step="0.01">
+          <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price" step="0.01" #priceInput>
         </md-input-container>
       </div>
 
       <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
-        <div class="amount-label">+ Tax</div>
+        <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
         <div class="amount-text">{{ taxAmount | currency:'USD':true }}</div>
       </div>
       <div class="amount-container" fxLayout fxLayoutAlign="space-between center">

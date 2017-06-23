@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -9,12 +9,13 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class TabCalcComponent implements OnInit, OnDestroy {
   private formChangeSubscription: Subscription;
+  @ViewChild('priceInput') private priceInput: ElementRef;
 
   public tabCalcForm: FormGroup;
   public taxAmount: number;
   public tipAmount: number;
   public totalAmount: number;
-  public readonly taxPercent: number = 0.07;
+  public readonly taxRate: number = 0.07;
 
   constructor() { }
 
@@ -46,7 +47,7 @@ export class TabCalcComponent implements OnInit, OnDestroy {
   public updateForm(): void {
     const price: number = this.tabCalcForm.get('price').value;
 
-    this.taxAmount = this.taxPercent * price;
+    this.taxAmount = this.taxRate * price;
     this.tipAmount = this.tabCalcForm.get('tipPercent').value  * price / 100;
     this.totalAmount = price + this.taxAmount + this.tipAmount;
   }
@@ -57,6 +58,7 @@ export class TabCalcComponent implements OnInit, OnDestroy {
       'price': 0.00
     });
     this.updateForm();
+    this.priceInput.nativeElement.focus();
     return;
   }
 
