@@ -1,19 +1,23 @@
 :host {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 
 .tab-calc-form {
 }
 
+.amount-input-label {
+  padding: 1.35em 0;
+}
+
 .amount-container {
-  margin: 1em 0 1em;
+  padding: 1.25em 0;
 }
 
 .amount-container.total {
   font-weight: 700;
   border-top: 3px solid #000;
-  margin: 0.5em 0 1em;
-  padding-top: 1em;
+  margin: 0.45em 0 0.85em;
+  padding-top: 1.25em;
 }
 
 .reset-button-container {

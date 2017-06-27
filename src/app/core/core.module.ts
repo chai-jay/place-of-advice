@@ -1,5 +1,6 @@
 // Angular Core
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 // Third Party Libraries
@@ -28,6 +29,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
   declarations: [HomeComponent, HeaderComponent],
   exports: [
     // Modules
+    BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,

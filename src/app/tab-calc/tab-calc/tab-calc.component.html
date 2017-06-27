@@ -17,7 +17,7 @@
         </md-input-container>
       </div>
 
-      <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
+      <div class="amount-container first" fxLayout fxLayoutAlign="space-between center">
         <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
         <div class="amount-text">{{ taxAmount | currency:'USD':true }}</div>
       </div>

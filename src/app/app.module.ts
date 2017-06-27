@@ -1,5 +1,4 @@
 // Angular Core
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Modules
@@ -14,7 +13,6 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     CoreModule,
     AppRoutingModule // Keep this after Core and Feature Modules for correct routes ordering
   ],
