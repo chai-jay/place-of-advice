@@ -55,5 +55,12 @@ describe('place-of-advice App', () => {
       page.navigateTo();
       expect(page.getHomeMdcardElement().isPresent()).toBe(true);
     });
+
+    it('should display text', () => {
+      page.navigateTo();
+      page.getHomeText().then((text) => {
+        expect(text.length).toBeGreaterThan(0);
+      });
+    });
   });
 });
