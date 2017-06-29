@@ -52,4 +52,8 @@ export class PlaceOfAdvicePage {
   getHomeMdcardElement() {
     return element(by.css('pla-home md-card'));
   }
+
+  getHomeText() {
+    return element(by.css('pla-home')).getText();
+  }
 }
