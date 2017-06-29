@@ -54,6 +54,6 @@ export class PlaceOfAdvicePage {
   }
 
   getHomeText() {
-    return element(by.css('pla-home')).getText();
+    return this.getHomeElement().getText();
   }
 }

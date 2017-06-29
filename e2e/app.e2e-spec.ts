@@ -19,7 +19,7 @@ describe('place-of-advice App', () => {
    */
 
   describe('Header Component', () => {
-    it ('should exist', () => {
+    it('should exist', () => {
       page.navigateTo();
       expect(page.getHeaderElement().isPresent()).toBe(true);
     });
