@@ -17,20 +17,16 @@ export class TabCalcPage {
     return element(by.css('.feature-header')).getText();
   }
 
-  getCalcTipInputLabel() {
-    return element(by.css('label[for="tipPercent"]'));
-  }
-
-  getCalcTipInputLabelText() {
-    return this.getCalcTipInputLabel().getText();
-  }
-
   getCalcTipInput() {
     return element(by.css('input#tipPercent'));
   }
 
   getCalcTipInputType() {
     return this.getCalcTipInput().getAttribute('type');
+  }
+
+  getCalcTipInputPlaceholderText() {
+    return this.getCalcTipInput().getAttribute('placeholder');
   }
 
   getCalcTipInputStep() {
@@ -41,20 +37,16 @@ export class TabCalcPage {
     return this.getCalcTipInput().getAttribute('formControlName');
   }
 
-  getCalcPriceInputLabel() {
-    return element(by.css('label.amount-input-label[for="price"]'));
-  }
-
-  getCalcPriceInputLabelText() {
-    return this.getCalcPriceInputLabel().getText();
-  }
-
   getCalcPriceInput() {
     return element(by.css('input#price'));
   }
 
   getCalcPriceInputType() {
     return this.getCalcPriceInput().getAttribute('type');
+  }
+
+  getCalcPriceInputPlaceholderText() {
+    return this.getCalcPriceInput().getAttribute('placeholder');
   }
 
   getCalcPriceInputStep() {
