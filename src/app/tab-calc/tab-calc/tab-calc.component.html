@@ -2,22 +2,16 @@
   <section class="feature-container">
     <h2 class="feature-header">NJ Tab Calculator</h2>
     <form class="tab-calc-form" [formGroup]="tabCalcForm">
-      <div class="amount-input-container" fxLayout fxLayoutAlign="space-between center">
-        <label for="tipPercent" class="amount-input-label" fxFlex="80">Tip Percent</label>
-        <md-input-container floatPlaceholder="never" fxFlex="20">
-          <input id="tipPercent" type="number" mdInput formControlName="tipPercent" name="tipPercent" placeholder="Tip %" step="1">
-          <span md-suffix [hidden]="tabCalcForm.get('tipPercent').invalid">%</span>
-        </md-input-container>
-      </div>
-      <div class="amount-input-container" fxLayout fxLayoutAlign="space-between center">
-        <label for="price" class="amount-input-label" fxFlex="70">Price (pretax)</label>
-        <md-input-container floatPlaceholder="never" fxFlex="30">
-          <span md-prefix [hidden]="tabCalcForm.get('price').invalid">$</span>
-          <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price" step="0.01" #priceInput>
-        </md-input-container>
-      </div>
+      <md-input-container fxFlex="100">
+        <input id="tipPercent" type="number" mdInput formControlName="tipPercent" name="tipPercent" placeholder="Tip Percent" step="1">
+        <span md-suffix [hidden]="tabCalcForm.get('tipPercent').invalid">%</span>
+      </md-input-container>
+      <md-input-container fxFlex="100">
+        <span md-prefix [hidden]="tabCalcForm.get('price').invalid">$</span>
+        <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price (Pretax)" step="0.01" #priceInput>
+      </md-input-container>
 
-      <div class="amount-container first" fxLayout fxLayoutAlign="space-between center">
+      <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
         <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
         <div class="amount-text">{{ taxAmount | currency:'USD':true }}</div>
       </div>
