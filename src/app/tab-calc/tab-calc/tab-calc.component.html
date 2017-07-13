@@ -11,15 +11,15 @@
         <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price (Pretax)" step="0.01" #priceInput>
       </md-input-container>
 
-      <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
+      <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
         <div class="amount-text">{{ taxAmount | currency:'USD':true }}</div>
       </div>
-      <div class="amount-container" fxLayout fxLayoutAlign="space-between center">
+      <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tip</div>
         <div class="amount-text">{{ tipAmount | currency:'USD':true }}</div>
       </div>
-      <div class="amount-container total" fxLayout fxLayoutAlign="space-between center">
+      <div class="amount-container total" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">Total</div>
         <div class="amount-text">{{ totalAmount | currency:'USD':true }}</div>
       </div>
