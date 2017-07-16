@@ -1,6 +1,8 @@
 # PlaceOfAdvice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+This project is hosted on https://placeofadvice.com.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1, though the currently used version is greater. 
 
 ## Development server
 
@@ -26,6 +28,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+
+## Deploying to Production
+
+Run `firebase init` to hook up deployment to a firebase app. Change firebase's deploy path setting to 'dist' instead of the default 'public'. 
+
+Do a production build with `ng buid -prod` to generate the deploy assets.
+
+Deploy the assets using `firebase deploy`. 
 
 ## Further help
 
