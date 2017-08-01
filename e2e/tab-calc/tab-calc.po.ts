@@ -76,4 +76,8 @@ export class TabCalcPage {
   getTotalAmount() {
     return element(by.css('.amount-container.total .amount-text')).getText();
   }
+
+  getResetButton() {
+    return element(by.css('.reset-button'));
+  }
 }
