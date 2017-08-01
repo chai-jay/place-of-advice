@@ -37,6 +37,10 @@ export class TabCalcPage {
     return this.getCalcTipInput().getAttribute('formControlName');
   }
 
+  getCalcTipInputValue() {
+    return this.getCalcTipInput().getAttribute('value');
+  }
+
   getCalcPriceInput() {
     return element(by.css('input#price'));
   }
@@ -55,5 +59,21 @@ export class TabCalcPage {
 
   getCalcPriceInputModelBinding() {
     return this.getCalcPriceInput().getAttribute('formControlName');
+  }
+
+  getCalcPriceInputValue() {
+    return this.getCalcPriceInput().getAttribute('value');
+  }
+
+  getTaxAmount() {
+    return element(by.css('.amount-container:nth-of-type(1) .amount-text')).getText();
+  }
+
+  getTipAmount() {
+    return element(by.css('.amount-container:nth-of-type(2) .amount-text')).getText();
+  }
+
+  getTotalAmount() {
+    return element(by.css('.amount-container.total .amount-text')).getText();
   }
 }

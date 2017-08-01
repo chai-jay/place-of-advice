@@ -40,6 +40,15 @@ describe('place-of-advice App', () => {
       expect(page.getCalcPriceInputStep()).toBe('0.01');
       expect(page.getCalcPriceInputModelBinding()).toBe('price');
     });
+
+    it('should have the correct initial values', () => {
+      page.navigateTo();
+      expect(page.getCalcTipInputValue()).toBe('20');
+      expect(page.getCalcPriceInputValue()).toBe('0');
+      expect(page.getTaxAmount()).toBe('$0.00');
+      expect(page.getTipAmount()).toBe('$0.00');
+      expect(page.getTotalAmount()).toBe('$0.00');
+    });
   });
 
 });
