@@ -44,14 +44,6 @@ export class TabCalcComponent implements OnInit, OnDestroy {
     this.formChangeSubscription.unsubscribe();
   }
 
-  public updateForm(): void {
-    const price: number = this.tabCalcForm.get('price').value;
-
-    this.taxAmount = this.taxRate * price;
-    this.tipAmount = this.tabCalcForm.get('tipPercent').value  * price / 100;
-    this.totalAmount = price + this.taxAmount + this.tipAmount;
-  }
-
   public resetForm(): void {
     this.tabCalcForm.reset({
       'tipPercent': 20,
@@ -60,6 +52,14 @@ export class TabCalcComponent implements OnInit, OnDestroy {
     this.updateForm();
     this.priceInput.nativeElement.focus();
     return;
+  }
+
+  private updateForm(): void {
+    const price: number = this.tabCalcForm.get('price').value;
+
+    this.taxAmount = this.taxRate * price;
+    this.tipAmount = this.tabCalcForm.get('tipPercent').value  * price / 100;
+    this.totalAmount = price + this.taxAmount + this.tipAmount;
   }
 
 }

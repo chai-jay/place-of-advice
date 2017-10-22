@@ -51,9 +51,9 @@ describe('place-of-advice App', () => {
       expect(page.getHeaderElement().isPresent()).toBe(true);
     });
 
-    it('should use an md-card element', () => {
+    it('should use an mat-card element', () => {
       page.navigateTo();
-      expect(page.getHomeMdcardElement().isPresent()).toBe(true);
+      expect(page.getHomeMatcardElement().isPresent()).toBe(true);
     });
 
     it('should display text', () => {
