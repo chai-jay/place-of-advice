@@ -9,8 +9,8 @@ export class TabCalcPage {
     return element(by.css('pla-tab-calc'));
   }
 
-  getCalcMdcardElement() {
-    return element(by.css('pla-tab-calc md-card'));
+  getCalcMatcardElement() {
+    return element(by.css('pla-tab-calc mat-card'));
   }
 
   getCalcHeaderText() {

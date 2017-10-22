@@ -24,11 +24,11 @@ export class PlaceOfAdvicePage {
   }
 
   getHeaderNavMenuButton() {
-    return element(by.css('button[md-icon-button]'));
+    return element(by.css('button[mat-icon-button]'));
   }
 
   getHeaderNavMenu() {
-    return element(by.css('md-menu'));
+    return element(by.css('mat-menu'));
   }
 
   getHeaderNavMenuHomeLink() {
@@ -49,8 +49,8 @@ export class PlaceOfAdvicePage {
     return element(by.css('pla-home'));
   }
 
-  getHomeMdcardElement() {
-    return element(by.css('pla-home md-card'));
+  getHomeMatcardElement() {
+    return element(by.css('pla-home mat-card'));
   }
 
   getHomeText() {

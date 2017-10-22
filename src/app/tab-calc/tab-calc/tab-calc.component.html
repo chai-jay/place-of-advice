@@ -1,15 +1,15 @@
-<md-card fxLayoutAlign="center" fxFlex.xs="100">
+<mat-card fxLayoutAlign="center" fxFlex.xs="100">
   <section class="feature-container">
     <h2 class="feature-header">NJ Tab Calculator</h2>
     <form class="tab-calc-form" [formGroup]="tabCalcForm" fxLayout="column">
-      <md-input-container fxFlex="100">
-        <input id="tipPercent" type="number" mdInput formControlName="tipPercent" name="tipPercent" placeholder="Tip Percent" step="1">
-        <span md-suffix [hidden]="tabCalcForm.get('tipPercent').invalid">%</span>
-      </md-input-container>
-      <md-input-container fxFlex="100">
-        <span md-prefix [hidden]="tabCalcForm.get('price').invalid">$</span>
-        <input id="price" type="number" mdInput formControlName="price" name="price" placeholder="Price (Pretax)" step="0.01" #priceInput>
-      </md-input-container>
+      <mat-input-container fxFlex="100">
+        <input id="tipPercent" type="number" matInput formControlName="tipPercent" name="tipPercent" placeholder="Tip Percent" step="1">
+        <span mat-suffix [hidden]="tabCalcForm.get('tipPercent').invalid">%</span>
+      </mat-input-container>
+      <mat-input-container fxFlex="100">
+        <span mat-premat-input-containerfix [hidden]="tabCalcForm.get('price').invalid">$</span>
+        <input id="price" type="number" matInput formControlName="price" name="price" placeholder="Price (Pretax)" step="0.01" #priceInput>
+      </mat-input-container>
 
       <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
@@ -25,8 +25,8 @@
       </div>
 
       <div class="reset-button-container">
-        <button class="reset-button" md-raised-button (click)="resetForm()">Reset</button>
+        <button class="reset-button" mat-raised-button (click)="resetForm()">Reset</button>
       </div>
     </form>
   </section>
-</md-card>
+</mat-card>

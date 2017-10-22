@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
+import { MatCardModule, MatInputModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { TabCalcComponent } from './tab-calc.component';
@@ -13,7 +13,8 @@ describe('TabCalcComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         BrowserAnimationsModule, // Needed by MaterialModule
-        MaterialModule,
+        MatCardModule, 
+        MatInputModule,
         ReactiveFormsModule
       ],
       declarations: [TabCalcComponent]

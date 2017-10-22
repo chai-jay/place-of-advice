@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from '@angular/material';
+import { MatIconModule, MatButtonModule, MatCardModule, MatToolbarModule, MatMenuModule } from '@angular/material';
 
 // Modules
 
@@ -22,7 +22,11 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
   imports: [
     RouterModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatCardModule,
     FlexLayoutModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics])
   ],
@@ -31,7 +35,6 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
     // Modules
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     FlexLayoutModule,
     Angulartics2Module,
 
