@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Third Party Modules
-import { MatCardModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatInputModule } from '@angular/material';
 
 // Modules
 import { SharedModule } from './../shared/shared.module';
@@ -15,6 +15,7 @@ import { TabCalcComponent } from './tab-calc/tab-calc.component';
 @NgModule({
   imports: [
     SharedModule,
+    MatButtonModule,
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
