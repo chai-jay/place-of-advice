@@ -4,6 +4,8 @@ This project is hosted on https://placeofadvice.com.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1, though the currently used version is greater. 
 
+The Angular CLI version has been upgraded multiple times via running `ng new testapp` and diffing the generated files against the files in this repo. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

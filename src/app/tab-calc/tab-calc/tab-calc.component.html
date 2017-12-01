@@ -1,7 +1,7 @@
-<mat-card fxLayoutAlign="center" fxFlex.xs="100">
-  <section class="feature-container">
-    <h2 class="feature-header">NJ Tab Calculator</h2>
-    <form class="tab-calc-form" [formGroup]="tabCalcForm" fxLayout="column">
+<mat-card fxLayoutAlign="center" fxFlex="100">
+  <section class="feature-container" fxLayoutWrap>
+    <h2 class="feature-header" fxFlex="100">NJ Tab Calculator</h2>
+    <form class="tab-calc-form" [formGroup]="tabCalcForm" fxFlex="100" fxLayout="column">
       <mat-input-container fxFlex="100">
         <input id="tipPercent" type="number" matInput formControlName="tipPercent" name="tipPercent" placeholder="Tip Percent" step="1">
         <span mat-suffix [hidden]="tabCalcForm.get('tipPercent').invalid">%</span>
@@ -13,18 +13,18 @@
 
       <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
-        <div class="amount-text">{{ taxAmount | currency:'USD':true }}</div>
+        <div class="amount-text">{{ taxAmount | currency:'USD':'symbol' }}</div>
       </div>
       <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tip</div>
-        <div class="amount-text">{{ tipAmount | currency:'USD':true }}</div>
+        <div class="amount-text">{{ tipAmount | currency:'USD':'symbol' }}</div>
       </div>
       <div class="amount-container total" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">Total</div>
-        <div class="amount-text">{{ totalAmount | currency:'USD':true }}</div>
+        <div class="amount-text">{{ totalAmount | currency:'USD':'symbol' }}</div>
       </div>
 
-      <div class="reset-button-container">
+      <div class="buttons-container">
         <button type="button" class="reset-button" mat-raised-button (click)="resetForm()">Reset</button>
       </div>
     </form>
