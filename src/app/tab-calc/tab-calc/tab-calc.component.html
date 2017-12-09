@@ -1,6 +1,7 @@
 <mat-card fxLayoutAlign="center" fxFlex="100">
   <section class="feature-container" fxLayoutWrap>
-    <h2 class="feature-header" fxFlex="100">NJ Tab Calculator</h2>
+    <h2 class="feature-header" fxFlex="100">
+      NJ Tab Calculator {{isPosttaxMode() ? '' : ' (Pretax)'}}</h2>
     <form class="tab-calc-form" [formGroup]="tabCalcForm" fxFlex="100" fxLayout="column">
       <mat-input-container fxFlex="100">
         <input id="tipPercent" type="number" matInput formControlName="tipPercent" name="tipPercent" placeholder="Tip Percent" step="1">
@@ -8,14 +9,14 @@
       </mat-input-container>
       <mat-input-container fxFlex="100">
         <span mat-premat-input-containerfix [hidden]="tabCalcForm.get('price').invalid">$</span>
-        <input id="price" type="number" matInput formControlName="price" name="price" placeholder="Price (Pretax)" step="0.01" #priceInput>
+        <input id="price" type="number" matInput formControlName="price" name="price" placeholder="Price{{ isPosttaxMode() ? '' : ' (Pretax)' }}" step="0.01" #priceInput>
       </mat-input-container>
 
-      <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
+      <div class="amount-container tax" *ngIf="!isPosttaxMode()" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tax ({{ taxRate * 100 | number:'1.0-0' }}%)</div>
         <div class="amount-text">{{ taxAmount | currency:'USD':'symbol' }}</div>
       </div>
-      <div class="amount-container" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
+      <div class="amount-container tip" fxLayout fxLayoutAlign="space-between center" fxFlex="100">
         <div class="amount-label">+ Tip</div>
         <div class="amount-text">{{ tipAmount | currency:'USD':'symbol' }}</div>
       </div>
@@ -26,6 +27,7 @@
 
       <div class="buttons-container">
         <button type="button" class="reset-button" mat-raised-button (click)="resetForm()">Reset</button>
+        <button type="button" class="mode-button" mat-raised-button (click)="toggleMode()">Toggle {{isPosttaxMode() ? 'Split-Bill' : 'Post-Tax'}}</button>
       </div>
     </form>
   </section>

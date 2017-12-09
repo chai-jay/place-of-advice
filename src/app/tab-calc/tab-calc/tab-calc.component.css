@@ -24,6 +24,6 @@
   text-align: center;
 }
 
-.reset-button {
+.buttons-container > button {
   font-size: 0.75em;
 }

@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/co
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 
+import { CalcModeEnum } from './../calc-mode.enum';
+
 @Component({
   selector: 'pla-tab-calc',
   templateUrl: './tab-calc.component.html',
@@ -16,10 +18,14 @@ export class TabCalcComponent implements OnInit, OnDestroy {
   public tipAmount: number;
   public totalAmount: number;
   public readonly taxRate: number = 0.07;
+  public mode: CalcModeEnum;
 
   constructor() { }
 
   ngOnInit(): void {
+    // Start with more commonly used post-tax/1-bill mode
+    this.mode = CalcModeEnum.POSTTAX;
+
     this.tabCalcForm = new FormGroup({
       'tipPercent': new FormControl(20, [
         Validators.required,
@@ -44,6 +50,16 @@ export class TabCalcComponent implements OnInit, OnDestroy {
     this.formChangeSubscription.unsubscribe();
   }
 
+  /**
+   * Returns boolean indicating if it's `POSTTAX` (ie normal) mode.
+   */
+  public isPosttaxMode(): boolean {
+    return this.mode === CalcModeEnum.POSTTAX;
+  }
+
+  /**
+   * Resets the form.
+   */
   public resetForm(): void {
     this.tabCalcForm.reset({
       'tipPercent': 20,
@@ -54,12 +70,28 @@ export class TabCalcComponent implements OnInit, OnDestroy {
     return;
   }
 
+  /**
+   * Update values from form changes. 
+   */
   private updateForm(): void {
     const price: number = this.tabCalcForm.get('price').value;
-
-    this.taxAmount = this.taxRate * price;
     this.tipAmount = this.tabCalcForm.get('tipPercent').value  * price / 100;
-    this.totalAmount = price + this.taxAmount + this.tipAmount;
+
+    // Calculate total
+    this.totalAmount = price + this.tipAmount;
+    // Only add on the tax amount if the price is pretax
+    if (this.mode === CalcModeEnum.PRETAX) {
+      this.taxAmount = this.taxRate * price;
+      this.totalAmount += this.taxAmount;
+    }
+  }
+
+  /**
+   * Changes calculator mode.
+   */
+  public toggleMode(): void {
+    this.mode = this.isPosttaxMode() ? CalcModeEnum.PRETAX : CalcModeEnum.POSTTAX;
+    this.updateForm();
   }
 
 }

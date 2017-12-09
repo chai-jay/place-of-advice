@@ -1,6 +1,6 @@
 import { PlaceOfAdvicePage } from './app.po';
 
-describe('place-of-advice App', () => {
+describe('Global/Common features', () => {
   let page: PlaceOfAdvicePage;
 
   beforeEach(() => {

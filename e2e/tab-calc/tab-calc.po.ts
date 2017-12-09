@@ -66,11 +66,11 @@ export class TabCalcPage {
   }
 
   getTaxAmount() {
-    return element(by.css('.amount-container:nth-of-type(1) .amount-text')).getText();
+    return element(by.css('.amount-container.tax .amount-text')).getText();
   }
 
   getTipAmount() {
-    return element(by.css('.amount-container:nth-of-type(2) .amount-text')).getText();
+    return element(by.css('.amount-container.tip .amount-text')).getText();
   }
 
   getTotalAmount() {
@@ -79,5 +79,9 @@ export class TabCalcPage {
 
   getResetButton() {
     return element(by.css('.reset-button'));
+  }
+
+  getModeButton() {
+    return element(by.css('.mode-button'));
   }
 }
